@@ -11,7 +11,6 @@ class Message
   field :body, :markdown => true
 end
 
-
 message = Message.new :body => my_markdown_text
 
 message.body.markdown!
@@ -26,6 +25,8 @@ message.body.marked_down?
 Enjoy!
 
 Extracted from: https://github.com/baphled/chat-engine/blob/master/lib/mongoid/markdown.rb
+
+Hopefully should work on both Mongoid pre 2.4 and later, including 3.x. Please help fix any bugs.
 
 == Contributing to mongoid-markdown
  

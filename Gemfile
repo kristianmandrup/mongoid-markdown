@@ -1,6 +1,7 @@
 source "http://rubygems.org"
 
 gem 'rdiscount'
+gem 'mongoid', '>= 2.0'
 
 group :development do
   gem "rspec",    ">= 2.8.0"
