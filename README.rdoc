@@ -1,6 +1,31 @@
 = mongoid-markdown
 
-Description goes here.
+Add Markdown functionality for any Mongoid object.
+
+```ruby
+
+class Message
+  include Mongoid::Document
+  include Mongoid::Markdown
+
+  field :body, :markdown => true
+end
+
+
+message = Message.new :body => my_markdown_text
+
+message.body.markdown!
+
+message.body = some_other_markedup_txt
+
+message.body.reload
+
+message.body.marked_down?
+```
+
+Enjoy!
+
+Extracted from: https://github.com/baphled/chat-engine/blob/master/lib/mongoid/markdown.rb
 
 == Contributing to mongoid-markdown
  
