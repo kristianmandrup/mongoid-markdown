@@ -1,12 +1,15 @@
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-$LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'rspec'
+require 'moped'
+require 'mongoid'
+
 require 'mongoid-markdown'
 
-# Requires supporting files with custom matchers and macros, etc,
-# in ./support/ and its subdirectories.
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
+Mongoid.configure do |config|
+  config.connect_to('mongoid_markdown-test')
+end
 
-RSpec.configure do |config|
-  
+RSpec.configure do |config|  
+  config.before(:each) do
+    Mongoid.purge!
+  end
 end

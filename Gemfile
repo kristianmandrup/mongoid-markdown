@@ -1,6 +1,7 @@
 source "http://rubygems.org"
 
 gem 'rdiscount'
+gem 'moped'
 gem 'mongoid', '>= 2.0'
 
 group :development do

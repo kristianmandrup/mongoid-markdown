@@ -6,7 +6,7 @@ Mongoid::Fields.option :markdown do |model,field,options|
   attribute = field.name.to_sym
 
   model.class_eval do
-    (self.markdown_fields ||= []) << attribute
+    (self.markdown_attributes ||= []) << attribute
 
     define_method(attribute) do |*type|
       type = type.first
@@ -34,10 +34,10 @@ module Mongoid
 
     included do
       # attr_accessor :geo
-      cattr_accessor :markdown_fields
-      @@markdown_fields = []
+      cattr_accessor :markdown_attributes
+      @@markdown_attributes = []
 
-      self send :include, InstanceMethods
+      self.send :include, InstanceMethods
     end
 
     def marked_down

@@ -13,7 +13,7 @@ end
 
 message = Message.new :body => my_markdown_text
 
-message.body.markdown!
+message.markdown!
 
 message.body = some_other_markedup_txt
 
