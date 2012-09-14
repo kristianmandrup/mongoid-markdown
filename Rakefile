@@ -17,7 +17,7 @@ Jeweler::Tasks.new do |gem|
   gem.name = "mongoid-markdown"
   gem.homepage = "http://github.com/kristianmandrup/mongoid-markdown"
   gem.license = "MIT"
-  gem.summary = %Q{Add markdown functionality to any text field}
+  gem.summary = %Q{Add markdown functionality to any mongoid text field}
   gem.description = %Q{Easily use markdown with mongoid texts}
   gem.email = "kmandrup@gmail.com"
   gem.authors = ["Kristian Mandrup"]
