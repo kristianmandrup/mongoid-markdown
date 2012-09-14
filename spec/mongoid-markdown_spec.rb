@@ -19,6 +19,7 @@ describe "MongoidMarkdown" do
 
     it "should markup text" do
       subject.marked_down?.should be_true
+      puts subject.body
       subject.body.should_not == markdown_text
     end
   end

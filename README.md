@@ -1,6 +1,6 @@
-= mongoid-markdown
+# Mongoid Markdown
 
-Add Markdown functionality for any Mongoid object.
+Add Markdown functionality to any Mongoid object.
 
 ```ruby
 
@@ -11,24 +11,34 @@ class Message
   field :body, :markdown => true
 end
 
-message = Message.new :body => my_markdown_text
+message = Message.new :body => "## Hello world"
+
+message.marked_down? # => false
 
 message.markdown!
 
-message.body = some_other_markedup_txt
+message.marked_down? # => true
 
-message.body.reload
+puts message.body # => "<h2>Hello world</h2>"
 
-message.body.marked_down?
+message.body = "## Goodbye cruel world..."
+
+message.reload # not sure about this!
+
+message.marked_down? # => true
 ```
 
 Enjoy!
 
 Extracted from: https://github.com/baphled/chat-engine/blob/master/lib/mongoid/markdown.rb
 
-Hopefully should work on both Mongoid pre 2.4 and later, including 3.x. Please help fix any bugs.
+See specs for more usage examples
 
-== Contributing to mongoid-markdown
+Should work on both Mongoid pre 2.4 and later, including 3.x. 
+
+Please help fix any bugs or come with suggestions to improvements.
+
+## Contributing to mongoid-markdown
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
